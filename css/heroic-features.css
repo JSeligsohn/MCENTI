@@ -16,6 +16,15 @@ h1, h2, h3, h4, a {
 
 a {
 	color: #108989;
+	transition: .3s ease;
+	-webkit-transition: .3s ease;
+}
+
+a:hover {
+	color: rgb(194, 153, 80);
+	text-decoration: none;
+	-webkit-transition: .3s ease;
+	transition: .3s ease;
 }
 
 a:hover:not('.navbar') {
@@ -109,6 +118,13 @@ body {
 	border-radius: 0;
 }
 
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+	background: #B7D1D2;
+	border-radius: 0;
+	color: #108989;
+}
+
 .navbar-inverse .navbar-nav>li>a {
 color: #EFEFEF;
 font-size: 1.5em;
@@ -125,16 +141,21 @@ font-size: 1.5em;
 	text-align: center;
 }
 .header img {
-	width: 225px;
+	width: 200px;
 }
 
 .header-address {
 	color: #108989; 
 	text-align: left;
-	margin-top: 30px;
+	margin-top: 15px;
+	font-size: 16px;
 }
 
-.header .col-md-4:last-child {
+.header-address h3 {
+	font-size: 1.3em;
+}
+
+.header .col-sm-4:last-child {
 	text-align: right;
 }
 
@@ -278,7 +299,6 @@ Main Content
 .main-content {
 	max-width: 600px;
 	font-size: 16px;
-	margin-left: 30px;
 }
 
 .main-content h1 {
@@ -338,6 +358,13 @@ Main Content
 }
 
 /******Testimonials*******/
+.testimonials {
+	border-left: 3px solid #C5D3DA;
+	border-top: 3px solid #C5D3DA;
+	padding: 1.5em;
+	box-shadow: 4px 4px 20px #C5D3DA;
+}
+
 .testimonial {
 	position: relative;
 	z-index: 0;
@@ -366,14 +393,10 @@ Main Content
 	font-size: .9em;
 }
 /************
-Media Queries
+Main Sidebar
 ************/
 .main-sidebar {
 	margin-top: 1.5em;
-	border-left: 5px solid #C5D3DA;
-	border-top: 5px solid #C5D3DA;
-	padding: 1.5em;
-	box-shadow: 4px 4px 20px #C5D3DA;
 }
 
 .widget-area {
@@ -388,8 +411,17 @@ Media Queries
 /************
 Media Queries
 ************/
+@media (max-width: 767px) {
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+		color: #F0f0F0;
+	}
+}
 
 @media (min-width: 768px) {
+	.header-address {
+		margin-top: 30px;
+	}
+
 	.navbar-header {
 		float: right;
 	}
@@ -433,5 +465,16 @@ Media Queries
 	.dropdown:hover .dropdown-menu {
 		display: block;
 		background: #B7D1D2;
+	}
+
+	.main-content {
+		margin-left: 30px;
+
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.header-address {
+		font-size: 18px;
 	}
 }
